@@ -23,7 +23,7 @@ final class BookTest extends TestCase
   }
 
   /**
-   * @testdox the correct price can be retreived with a discount in percentage applied using the getDiscountedPrice method
+   * @testdox the correct price can be retreived with a discount (percentage) applied using the getDiscountedPrice method
    */
   public function testPriceWithDiscountPercentCanBeRetrievedWithGetDiscountedPrice(): void
   {
@@ -39,6 +39,15 @@ final class BookTest extends TestCase
     $myBook = new Book('Mark Twain', 'Huckleberry Finn', '12345678', 3.99);
     $myBook->changePrice(7.0);
     $this->assertEquals(7.0, $myBook->getPrice());
+  }
+
+  /**
+   * @testdox the correct title is returned with the getTitle method
+   */
+  public function testTitleIsReturnedWithGetTitle(): void
+  {
+    $myBook = new Book('Mark Twain', 'Huckleberry Finn', '12345678', 3.99);
+    $this->assertSame('Huckleberry Finn', $myBook->getTitle());
   }
 }
 ?>
